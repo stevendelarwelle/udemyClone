@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem "font-awesome-rails"
 gem 'simple_form'
 gem 'devise'
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'byebug'
