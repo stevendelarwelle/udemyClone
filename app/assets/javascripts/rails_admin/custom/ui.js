@@ -10,6 +10,6 @@
 //= require plugins/file_upload.min
 //= require plugins/lists.min
 //= require plugins/char_counter.min
-//= require plugins/fullscreen.min
+//= require plugins/fullscreen.min.js
 //= require plugins/urls.min
 //= require plugins/inline_styles.min
