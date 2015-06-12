@@ -17,7 +17,8 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem 'devise'
 gem 'toastr-rails'
-gem 'rails_admin'
+gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # pending release of > 0.6.7
+gem "wysiwyg-rails", "~> 1.2.7"
 
 group :development, :test do
   gem 'byebug'

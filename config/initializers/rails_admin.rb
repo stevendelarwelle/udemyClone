@@ -35,4 +35,9 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  config.model Course do
+    edit do
+      configure :description, :froala
+    end
+  end
 end
