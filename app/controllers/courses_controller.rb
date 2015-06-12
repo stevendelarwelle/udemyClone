@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @lectures = @course.lectures.all.order("seq_number ASC")
   end
 
   private

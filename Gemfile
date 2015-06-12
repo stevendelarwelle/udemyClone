@@ -17,12 +17,14 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem 'devise'
 gem 'toastr-rails'
-gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # pending release of > 0.6.7
-gem "wysiwyg-rails"
+gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # for admin console
+gem "wysiwyg-rails" # for rich text editor
+gem "embedly" # for video
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails' # for env files
 end
 
