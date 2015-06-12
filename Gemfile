@@ -17,6 +17,7 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem 'devise'
 gem 'toastr-rails'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'byebug'
