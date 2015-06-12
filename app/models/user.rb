@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :courses, dependent: :destroy
   has_many :lectures, dependent: :destroy
+  acts_as_commontator
 end

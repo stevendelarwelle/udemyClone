@@ -5,4 +5,5 @@ class Lecture < ActiveRecord::Base
   validates :course_id, presence: true
   validates :name, presence: true
   validates :seq_number, presence: true
+  acts_as_commontable
 end
