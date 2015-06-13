@@ -1,0 +1,21 @@
+<br/>
+<div class="panel panel-info">
+  <div class="panel-heading" id="accordion">
+    <span class="glyphicon glyphicon-comment"></span> Comments
+    <div class="btn-group pull-right">
+      <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+        <span class="badge"><%= @comments.size %> <i class="fa fa-arrow-down"></i></span>
+      </a>
+    </div>
+  </div>
+
+    <div class="panel-body">
+      <ul class="chat">
+        <%= render @comments %>
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <%= render 'comments/form' %>
+    </div>
+
+</div>

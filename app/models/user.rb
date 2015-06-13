@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :courses, dependent: :destroy
   has_many :lectures, dependent: :destroy
-  validates :name, presence: true
+  has_many :comments, dependent: :destroy
 end

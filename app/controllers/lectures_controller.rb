@@ -3,6 +3,8 @@ class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show]
 
   def show
+    @comments = @lecture.comments.all
+    @comment = Comment.new
   end
 
   private

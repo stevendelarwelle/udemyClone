@@ -1,0 +1,20 @@
+<li class="left clearfix"><span class="chat-img pull-left">
+  <%= link_to user_path(comment.user) do %>
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+      <% end %>
+                        </span>
+  <div class="chat-body clearfix">
+    <div class="header">
+      <strong class="primary-font"><%= link_to comment.user.name, user_path(comment.user) %></strong>
+      <% if comment.user == current_user %>
+          <span><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, course_lecture_comment_path(comment.course, comment.lecture, comment), method: :delete, data: {confirm: "Are you sure to delete your comment?"}, class: "btn btn-sm btn-danger" %></span>
+      <% end %>
+      <small class="pull-right text-muted">
+        <span class="glyphicon glyphicon-time"></span><%= time_ago_in_words(comment.created_at) %> ago
+      </small>
+    </div>
+    <p>
+      <%= raw(comment.content) %>
+    </p>
+  </div>
+</li>
