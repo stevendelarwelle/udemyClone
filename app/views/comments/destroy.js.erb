@@ -1,0 +1,5 @@
+$("#comment_<%= @comment.id %>").fadeOut(500, function(){
+    $(this).remove();
+    $("#lec-comments-size").text('<%= @comment.lecture.comments.all.size %> Comments');
+    toastr['info']('Comment Deleted!');
+});

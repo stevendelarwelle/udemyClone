@@ -3,14 +3,12 @@
   <div class="panel-heading" id="accordion">
     <span class="glyphicon glyphicon-comment"></span> Comments
     <div class="btn-group pull-right">
-      <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-        <span class="badge"><%= @comments.size %> <i class="fa fa-arrow-down"></i></span>
-      </a>
+        <span class="badge" id="lec-comments-size"><%= @comments.size %> Comments</span>
     </div>
   </div>
 
     <div class="panel-body">
-      <ul class="chat">
+      <ul class="chat" id="comment-container">
         <%= render @comments %>
       </ul>
     </div>

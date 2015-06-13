@@ -1,1 +1,1 @@
-<h1><%= @user.name %></h1>
+<h1 class="text-center"><%= gravatar_tag @user.email, size: 100, html: {class: "img-rsponsive img-circle"} %><%= @user.name %></h1>

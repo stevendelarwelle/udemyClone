@@ -1,0 +1,5 @@
+$(".comment-content").val('');
+$("#comment-container").append('<%= j render @comment %>');
+$("#lec-comments-size").text('<%= @comment.lecture.comments.all.size %> Comments');
+$("#comment_<%= @comment.id %>").hide().fadeIn(1000);
+toastr['info']('Comment Posted!!!');

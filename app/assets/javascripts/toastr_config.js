@@ -4,7 +4,7 @@ $(document).ready(function() {
         "debug": false,
         "newestOnTop": true,
         "progressBar": false,
-        "positionClass": "toast-bottom-full-width",
+        "positionClass": "toast-top-right",
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",

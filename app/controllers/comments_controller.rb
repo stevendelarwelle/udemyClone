@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     if @comment.save
       respond_to do |format|
         format.html {redirect_to course_lecture_path(@course, @lecture), notice: 'Comment Posted!!!'}
+        format.js
       end
     else
       redirect_to :back, alert: 'Something went wrong!'
@@ -24,6 +25,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     respond_to do |format|
       format.html {redirect_to course_lecture_path(@course, @lecture), notice: 'Comment Deleted!'}
+      format.js
     end
   end
 

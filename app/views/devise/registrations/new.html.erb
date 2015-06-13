@@ -1,18 +1,23 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <div class="account-wall">
+        <div id="my-tab-content" class="tab-content">
+          <div class="tab-pane active" id="register">
+            <div class="text-center"><i class="fa fa-user fa-5x text-center"></i></div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name, autofocus: true, required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
+                <%= f.error_notification %>
+                  <%= f.input :name, autofocus: true, required: true, label: false, placeholder: "Name", input_html: {class: "form-control text" } %>
+                  <%= f.input :email, required: true, label: false, placeholder: "Email", input_html: {class: "form-control text" } %>
+                  <%= f.input :password, required: true, label: false, placeholder: "Password", input_html: {class: "form-control password" } %>
+                  <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirm Password", input_html: {class: "form-control password" } %>
+                  <%= f.button :submit, "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+                <%= render "devise/shared/links" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

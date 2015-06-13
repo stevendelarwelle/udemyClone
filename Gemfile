@@ -19,6 +19,7 @@ gem 'devise'
 gem 'toastr-rails'
 gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # for admin console
 gem "wysiwyg-rails" # for rich text editor
+gem 'gravatarify', '~> 3.0.0'
 
 group :development, :test do
   gem 'byebug'

@@ -23,7 +23,7 @@
                 <% if current_user.name == "" %>
                     User
                 <% else %>
-                    <%= current_user.name %>
+                    <%= gravatar_tag current_user.email, :size => 24, html: {class: "img-circle"} %> <%= current_user.name %>
                 <% end %>
                     <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
