@@ -1,10 +1,30 @@
-<h1>Lectures#show</h1>
-<%= @lecture.name %><br>
-<%= @lecture.course.name %>
-<div class="videoWrapper thumbnail">
-    <%= display(@lecture.url).html_safe %>
+<h1 class="text-center"><%= @lecture.seq_number %>. <%= @lecture.name %></h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9 col-md-12">
+      <div class="videoWrapper thumbnail">
+        <%= raw(@lecture.url) %>
+      </div>
+      <div class="hidden-lg">
+        <h5>INSTRUCTIONS</h5>
+        <div style="width:100%; height:150px; overflow: auto;" >
+          <p><%= raw(@lecture.instructions) %></p>
+        </div>
+      </div>
+      <%= commontator_thread(@lecture) %>
+    </div>
+    <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
+      <h5>DESCRIPTION</h5>
+      <div style="width:100%; height:250px; overflow: auto;" >
+        <small><%= raw(@lecture.description) %></small>
+      </div>
+      <h5>INSTRUCTIONS</h5>
+      <div style="width:100%; height:250px; overflow: auto;" >
+        <p><%= raw(@lecture.instructions) %></p>
+      </div>
+    </div>
+  </div>
 </div>
-<%= commontator_thread(@lecture) %>
 
 <style>
     .videoWrapper {

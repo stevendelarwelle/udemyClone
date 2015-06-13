@@ -8,41 +8,35 @@
    link = Commontator.commontator_link(creator, main_app) || ''
    avatar = Commontator.commontator_avatar(creator, self) || ''
 %>
-
-<div id="comment_<%= comment.id.to_s %>_div" class="comment">
-  <div id="comment_<%= comment.id.to_s %>_top_div" class="comment_div">
-    <span id="comment_<%= comment.id.to_s %>_commontator_span" class="comment_commontator">
-      <%= link.blank? ? name : link_to(name, link) %>
-    </span>
-    <span id="comment_<%= comment.id.to_s %>_actions_span" class="comment_actions">
-      <%= render :partial => 'commontator/comments/actions',
-                 :locals => { :comment => comment,
-                              :user => user } %>
-    </span>
-  </div>
-  <div id="comment_<%= comment.id.to_s %>_middle_div" class="comment_div">
-    <span id="comment_<%= comment.id.to_s %>_avatar_span" class="comment_avatar">
+<li id="comment_<%= comment.id.to_s %>_div" class="list-group-item">
+  <div class="row">
+    <div class="col-xs-2 col-md-1">
       <%= avatar %>
-    </span>
-    <span id="comment_<%= comment.id.to_s %>_votes_span" class="comment_votes">
-      <%= render :partial => 'commontator/comments/votes',
-                 :locals => { :comment => comment,
-                              :user => user } %>
-    </span>
-    <div id="comment_<%= comment.id.to_s %>_body_div" class="comment_body">
-      <%= render :partial => 'commontator/comments/body',
-                 :locals => { :comment => comment } %>
     </div>
-  </div>
-  <div id="comment_<%= comment.id.to_s %>_bottom_div" class="comment_div">
-    <% if comment.is_modified? %>
-        <span id="comment_<%= comment.id.to_s %>_updated_timestamp_span" class="comment_timestamp">
+    <div class="col-xs-10 col-md-11">
+      <div>
+        <%= link.blank? ? name : link_to(name, link) %>
+        <span id="comment_<%= comment.id.to_s %>_actions_span" class="pull-right">
+        <%= render :partial => 'commontator/comments/actions',
+                   :locals => { :comment => comment,
+                                :user => user } %>
+        </span>
+        <div id="comment_<%= comment.id.to_s %>_body_div" class="comment-text">
+            <%= render :partial => 'commontator/comments/body',
+                       :locals => { :comment => comment } %>
+        </div>
+        <div class="mic-info">
+            <% if comment.is_modified? %>
+              <div id="comment_<%= comment.id.to_s %>_updated_timestamp_span">
           <%= time_ago_in_words(comment.updated_timestamp) %> ago
-        </span>
-    <% else %>
-        <span id="comment_<%= comment.id.to_s %>_created_timestamp_span" class="comment_timestamp">
+              </div>
+            <% else %>
+              <div id="comment_<%= comment.id.to_s %>_created_timestamp_span">
           <%= time_ago_in_words(comment.created_timestamp) %> ago
-        </span>
-    <% end %>
-  </div>
-</div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</li>

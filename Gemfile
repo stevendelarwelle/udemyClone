@@ -21,6 +21,7 @@ gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # for admin cons
 gem "wysiwyg-rails" # for rich text editor
 gem "embedly" # for video
 gem 'commontator', '~> 4.10.0' #for comments
+gem 'will_paginate', '~> 3.0.6' # for comments
 
 group :development, :test do
   gem 'byebug'
