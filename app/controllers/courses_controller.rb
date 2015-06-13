@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show]
   def index
-    @courses = Course.all.order('created_at DESC')
+    @courses = Course.all
   end
 
   def show

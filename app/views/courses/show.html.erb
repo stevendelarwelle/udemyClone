@@ -1,36 +1,4 @@
-<div class="jumbotron">
-	<div class="container">
-		<div class="row">
-          <div class="col-md-6">
-            <%= image_tag "rails1.jpg", alt: @course.name, class: "img-responsive" %>
-          </div>
-          <div class="col-md-6">
-            <h2><%= @course.name %></h2>
-            <% if @course.price > 0 %>
-                <h4>&euro; <%= @course.price %></h4>
-            <% else %>
-                <h4>FREE</h4>
-            <% end %>
-          </div>
-        </div>
-	</div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h4>DESCRIPTION</h4>
-      <small><%= raw(@course.description) %></small>
-    </div>
-    <div class="col-md-8">
-      <h4>LECTURES</h4>
-      <div class="list-group">
-        <% @lectures.each do |lecture| %>
-            <%= link_to course_lecture_path(@course, lecture), class: "list-group-item list-group-item-info" do %>
-              <h5 class="list-group-item-heading"><%= lecture.seq_number %>. <%= lecture.name %></h5>
-              <p class="list-group-item-text"><%= truncate(lecture.description, length: 50, separator: ' ') %></p>
-            <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<h1>Courses#show</h1>
+<%= @course.name %><br/>
+<%= @course.price %><br/>
+<%= raw(@course.description) %><br/>
