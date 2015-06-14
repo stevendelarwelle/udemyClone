@@ -3,6 +3,7 @@ class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show]
 
   def show
+    authorize @lecture
     @comments = @lecture.comments.all
     @comment = Comment.new
   end
