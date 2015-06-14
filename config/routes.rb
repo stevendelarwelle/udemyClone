@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :lectures, only: [:show] do
       resources :comments, only: [:index, :create, :destroy]
     end
-    resources :trades, only: [:create]
+    resources :trades, only: [:new, :create]
   end
   resources :users, only: [:show]
 

@@ -1,0 +1,25 @@
+<%= include_gon %>
+<div class="container">
+  <h2 class="text-center">Buy <%= @course.name %></h2>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_tag course_trades_path(@course) do%>
+          <p>Please enter your payment details:<span class="pull-right text-muted">
+            <a href="https://www.braintreegateway.com/merchants/4kryvyj2bx5fqx89/verified" target="_blank">
+              <img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-dark.png" width="280px" height ="44px" border="0"/>
+            </a>
+          </span></p>
+          <div id="dropin"></div>
+          <%= submit_tag "Pay #{@course.price} $".html_safe, class: "btn btn-success btn-lg btn-block" %>
+      <%end%>
+    </div>
+  </div>
+</div>
+<script>
+    braintree.setup(
+            // Replace this with a client token from your server
+            gon.client,
+            "dropin", {
+                container: "dropin"
+            });
+</script>

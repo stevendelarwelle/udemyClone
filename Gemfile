@@ -22,6 +22,9 @@ gem "wysiwyg-rails" # for rich text editor
 gem 'gravatarify', '~> 3.0.0'
 gem "pundit"
 gem "auto_html"
+gem "braintree"
+gem "gon"
+gem 'modernizr-rails'
 
 group :development, :test do
   gem 'byebug'

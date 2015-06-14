@@ -3,7 +3,7 @@ module CoursesHelper
     if current_user
       if course.bought(current_user) && current_user.admin == false
         if course.price > 0
-          link_to "&euro; ".html_safe+course.price.to_s, course_trades_path(course), method: :post, class: "btn btn-danger"
+          link_to "Buy for $ ".html_safe+course.price.to_s, new_course_trade_path(course), class: "btn btn-danger"
         else
           link_to "FREE",course_trades_path(course), method: :post, class: "btn btn-success"
         end
@@ -12,7 +12,7 @@ module CoursesHelper
       end
     else
       if course.price > 0
-        link_to "&euro; ".html_safe+course.price.to_s, course_trades_path(course), method: :post, class: "btn btn-danger"
+        link_to "Buy for $ ".html_safe+course.price.to_s, new_course_trade_path(course), class: "btn btn-danger"
       else
         link_to "FREE",course_trades_path(course), method: :post, class: "btn btn-success"
       end

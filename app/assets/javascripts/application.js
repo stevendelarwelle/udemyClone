@@ -16,4 +16,7 @@
 //= require bootstrap-sprockets
 //= require toastr_config.js
 //= require toastr
+//= require braintree
+//= require trades
+//= require modernizr
 //= require_tree .
