@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   has_many :courses, dependent: :destroy
   has_many :lectures, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :trades, dependent: :destroy
+  has_many :courses, through: :trades
+
+  def buy_course(course)
+    self.trades.create(course: course)
+  end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'trades/create'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations" }
   root 'pages#home'
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
     resources :lectures, only: [:show] do
       resources :comments, only: [:index, :create, :destroy]
     end
+    resources :trades, only: [:create]
   end
   resources :users, only: [:show]
 
