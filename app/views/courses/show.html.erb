@@ -6,22 +6,11 @@
       </div>
       <div class="col-md-6">
         <h2><%= @course.name %></h2>
-        <h1>
-          <% if @course.bought(current_user) == false || current_user.admin? %>
-          Bought
-          <% else %>
-          Buy
-          <% end %>
-        </h1>
-        <% if @course.price > 0 %>
-            <h4>&euro; <%= @course.price %></h4>
-        <% else %>
-            <h4>FREE</h4>
-        <% end %>
+        <%= action_buttons(@course) %>
         <h4>DESCRIPTION</h4>
         <div style="width:100%; height:180px; overflow: auto;" >
-        <small><%= raw(@course.description) %></small>
-          </div>
+          <small><%= raw(@course.description) %></small>
+        </div>
       </div>
     </div>
   </div>

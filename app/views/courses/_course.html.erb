@@ -5,15 +5,7 @@
   <div class="producttitle"><%= course.name %></div>
   <div class="productprice">
     <div class="pull-right">
-      <% if course.price > 0 %>
-          <a href="#" class="btn btn-danger btn-sm" role="button">
-            BUY
-          </a>
-      <% else %>
-          <a href="#" class="btn btn-success btn-sm" role="button">
-            FREE
-          </a>
-      <% end %>
+      <%= action_buttons(course) %>
     </div>
     <div class="pricetext">
       <% if course.price > 0 %>
