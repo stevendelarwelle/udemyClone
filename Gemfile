@@ -29,6 +29,8 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+gem 'mandrill-api', '1.0.52', require: 'mandrill'
+gem 'gibbon'
 
 group :development, :test do
   gem 'byebug'

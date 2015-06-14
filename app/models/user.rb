@@ -5,11 +5,30 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2, :facebook, :github]
 
+  #after_create :subscribe
+
   has_many :courses, dependent: :destroy
   has_many :lectures, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :trades, dependent: :destroy
   has_many :courses, through: :trades
+
+  def subscribe
+
+    @list_id = ENV['MAILCHIMP_LIST_ID']
+    gb = Gibbon::API.new
+
+    gb.lists.subscribe({
+                           :id => @list_id,
+                           :email => {:email => self.email},
+                           :merge_vars => {:FNAME => self.name}
+                       })
+
+  end
+
+  def send_welcome
+    MyMailer.new_user(self).deliver
+  end
 
   def buy_course(course)
     self.trades.create(course: course)
