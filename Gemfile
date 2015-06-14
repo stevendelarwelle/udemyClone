@@ -21,6 +21,7 @@ gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # for admin cons
 gem "wysiwyg-rails" # for rich text editor
 gem 'gravatarify', '~> 3.0.0'
 gem "pundit"
+gem "auto_html"
 
 group :development, :test do
   gem 'byebug'

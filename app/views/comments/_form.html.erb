@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
     <%= simple_form_for([@course, @lecture, @lecture.comments.build], remote: true) do |f| %>
         <div class="input-group">
-        <%= f.input :content, required: true, autofocus: true, label: false, placeholder: 'New Comment Here ...', input_html: {rows: 5, id: "btn-input", class: "form-control input-sm comment-content"} %>
+        <%= f.input :content, required: true, autofocus: true, label: false, placeholder: 'New Comment Here ...', input_html: {rows: 5, id: "btn-input", class: "form-control comment-content"} %>
         <span class="input-group-btn">
           <%= f.button :submit, class: "btn btn-warning btn-sm", id: "btn-chat"  %>
         </span>
