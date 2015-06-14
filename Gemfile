@@ -25,6 +25,10 @@ gem "auto_html"
 gem "braintree"
 gem "gon"
 gem 'modernizr-rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug'
