@@ -1,28 +1,20 @@
 <% if @user.facebook != "" && @user.facebook != nil %>
-    <div class="col-md-4 text-center">
-      <p>
-        <%= link_to '<i class="fa fa-facebook-square"></i> Facebook Profile'.html_safe, @user.facebook, target: '_blank' %>
-      </p>
-    </div>
+    <li>
+      <%= link_to '<i class="fa fa-facebook-square"></i> Facebook Profile'.html_safe, @user.facebook, target: '_blank' %>
+    </li>
 <% end %>
 <% if @user.twitter != "" && @user.twitter != nil %>
-    <div class="col-md-4 text-center">
-      <p>
-        <%= link_to '<i class="fa fa-twitter-square"></i> Twitter Page'.html_safe, @user.twitter, target: '_blank' %>
-      </p>
-    </div>
+    <li>
+      <%= link_to '<i class="fa fa-twitter-square"></i> Twitter Page'.html_safe, @user.twitter, target: '_blank' %>
+    </li>
 <% end %>
 <% if @user.github != "" && @user.github != nil %>
-    <div class="col-md-4 text-center">
-      <p>
-        <%= link_to '<i class="fa fa-github-square"></i> GitHub'.html_safe, @user.github, target: '_blank' %>
-      </p>
-    </div>
+    <li>
+      <%= link_to '<i class="fa fa-github-square"></i> GitHub'.html_safe, @user.github, target: '_blank' %>
+    </li>
 <% end %>
 <% if @user.portfolio != "" && @user.portfolio != nil %>
-    <div class="col-md-4 text-center">
-      <p>
-        <%= link_to '<i class="fa fa-user"></i> Web'.html_safe, @user.portfolio, target: '_blank' %>
-      </p>
-    </div>
+    <li>
+      <%= link_to '<i class="fa fa-user"></i> Web'.html_safe, @user.portfolio, target: '_blank' %>
+    </li>
 <% end %>
