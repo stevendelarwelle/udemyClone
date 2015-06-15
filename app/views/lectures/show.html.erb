@@ -18,6 +18,19 @@
             </div>
           </div>
       <% end %>
+      <div>
+      <% unless @plecture.nil? %>
+          <div class="pull-left">
+            <%= link_to ('<i class="fa fa-arrow-left"></i> Previous Lecture').html_safe, course_lecture_path(@plecture.course, @plecture), class: "btn btn-danger" %>
+          </div>
+      <% end %>
+      <% unless @nlecture.nil? %>
+          <div class="pull-right">
+            <%= link_to ('Next Lecture <i class="fa fa-arrow-right"></i>').html_safe, course_lecture_path(@nlecture.course, @nlecture), class: "btn btn-danger" %>
+          </div>
+      <% end %>
+      </div>
+      <br/>
       <%= render 'comments' %>
     </div>
     <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
