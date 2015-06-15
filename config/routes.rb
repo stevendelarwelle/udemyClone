@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'trades/create'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations", omniauth_callbacks: "omniauth_callbacks" }
   root 'pages#home'
   resources :courses, only: [:index, :show] do
     resources :lectures, only: [:show] do
-      resources :comments, only: [:index, :create, :destroy]
+      resources :comments, only: [:create, :destroy]
     end
     resources :trades, only: [:new, :create]
   end

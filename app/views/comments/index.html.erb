@@ -1,6 +1,0 @@
-<h1>Comments#index</h1>
-<% @comments.each do |comment| %>
-    <h3><%= comment.user.name %></h3>
-    <p><%= raw(comment.content) %></p>
-    <p><%= time_ago_in_words(comment.created_at) %> ago</p>
-<% end %>

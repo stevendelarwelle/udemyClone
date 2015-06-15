@@ -21,6 +21,18 @@
             <%= f.input :email, required: true, input_html: {class: "form-control"} %>
           </div>
           <div class="form-group">
+            <%= f.input :facebook, input_html: {class: "form-control"}, label: "Facebook Profile Link" %>
+          </div>
+          <div class="form-group">
+            <%= f.input :twitter, input_html: {class: "form-control"}, label: "Twitter Profile Link" %>
+          </div>
+          <div class="form-group">
+            <%= f.input :github, input_html: {class: "form-control"}, label: "GitHub Profile Link" %>
+          </div>
+          <div class="form-group">
+            <%= f.input :portfolio, input_html: {class: "form-control"}, label: "Portfolio web-Link" %>
+          </div>
+          <div class="form-group">
             <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: {class: "form-control"} %>
           </div>
           <div class="form-group">

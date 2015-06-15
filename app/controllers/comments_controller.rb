@@ -1,10 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_lecture, only: [:index, :create, :destroy]
-
-  def index
-    @comments = @lecture.comments.all
-  end
+  before_action :set_lecture, only: [:create, :destroy]
 
   def create
     @comment = @lecture.comments.build(comment_params)

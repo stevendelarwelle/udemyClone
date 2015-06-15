@@ -1,1 +1,12 @@
-<h1 class="text-center"><%= gravatar_tag @user.email, size: 100, html: {class: "img-rsponsive img-circle"} %><%= @user.name %></h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center"><%= gravatar_tag @user.email, size: 100, html: {class: "img-rsponsive img-circle"} %><%= @user.name %></h1>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <p><%= link_to '<i class="fa fa-link"></i> CODElit Profile'.html_safe, user_url(@user) %></p>
+      </div>
+      <%= render 'links' %>
+    </div>
+  </div>
+</div>
+<%= render 'user_courses' %>
