@@ -1,17 +1,15 @@
 <div class="col-md-9">
   <div class="profile-content text-center">
-    <% if @courses.size > 0 %>
-        <h3 class="text-center">Courses (<%= @courses.size.to_s %>)</h3>
-    <% end %>
-      <div class="row">
-        <% @courses.each do |course| %>
-            <div class="col-lg-3 col-md-4 col-sm-6 column productbox">
-              <%= link_to course_path(course) do %>
-                  <%= image_tag course.image.url(:thumb), alt: course.name, class: "img-responsive" %>
-              <% end %>
-              <div class="producttitle"><%= course.name %></div>
-            </div>
-        <% end %>
-      </div>
+    <h3 class="text-center">Courses (<%= @courses.size.to_s %>)</h3>
+    <div class="row">
+      <% @courses.each do |course| %>
+          <div class="col-lg-3 col-md-4 col-sm-6 column productbox">
+            <%= link_to course_path(course) do %>
+                <%= image_tag course.image.url(:thumb), alt: course.name, class: "img-responsive" %>
+            <% end %>
+            <div class="producttitle"><%= course.name %></div>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>
