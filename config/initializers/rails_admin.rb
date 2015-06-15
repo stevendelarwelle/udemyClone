@@ -40,4 +40,10 @@ RailsAdmin.config do |config|
       configure :description, :froala
     end
   end
+  config.model Lecture do
+    edit do
+      configure :description, :froala
+      configure :instructions, :froala
+    end
+  end
 end
