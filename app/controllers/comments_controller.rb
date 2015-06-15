@@ -32,8 +32,8 @@ class CommentsController < ApplicationController
   private
 
   def set_lecture
-    @course = Course.find(params[:course_id])
-    @lecture = @course.lectures.find(params[:lecture_id])
+    @course = Course.friendly.find(params[:course_id])
+    @lecture = @course.lectures.friendly.find(params[:lecture_id])
   end
 
   def comment_params

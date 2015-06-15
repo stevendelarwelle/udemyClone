@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2, :facebook, :github]
 
+  validates_presence_of :name
+
+  extend FriendlyId
+    friendly_id :name, use: :slugged
+
   #after_create :subscribe
 
   has_many :courses, dependent: :destroy

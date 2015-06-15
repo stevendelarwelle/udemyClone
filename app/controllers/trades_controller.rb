@@ -29,7 +29,7 @@ class TradesController < ApplicationController
   private
 
   def set_course
-    @course = Course.find(params[:course_id])
+    @course = Course.friendly.find(params[:course_id])
   end
   def generate_client_token
     Braintree::ClientToken.generate()

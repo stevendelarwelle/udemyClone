@@ -6,4 +6,6 @@ class Lecture < ActiveRecord::Base
   validates :course_id, presence: true
   validates :name, presence: true
   validates :seq_number, presence: true
+  extend FriendlyId
+    friendly_id :name, use: :slugged
 end

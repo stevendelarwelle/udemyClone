@@ -16,21 +16,22 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem "font-awesome-rails"
 gem 'simple_form'
 gem 'devise'
-gem 'toastr-rails'
+gem 'toastr-rails' # for notice and alerts
 gem "rails_admin", github: "sferik/rails_admin", ref: "43f368a" # for admin console
-gem "wysiwyg-rails" # for rich text editor
+gem "wysiwyg-rails" # for rich text editor in admin panel
 gem 'gravatarify', '~> 3.0.0'
-gem "pundit"
-gem "auto_html"
-gem "braintree"
-gem "gon"
-gem 'modernizr-rails'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'mandrill-api', '1.0.52', require: 'mandrill'
-gem 'gibbon'
+gem "pundit" # for authorizations to sales
+gem "auto_html" # for comments link detection
+gem "braintree" # for payments
+gem "gon" # for braintree js getting client token
+gem 'modernizr-rails' # for braintree js
+gem 'omniauth' # for social networks login
+gem 'omniauth-google-oauth2' # for google+ integration
+gem 'omniauth-facebook' # for fb integration
+gem 'omniauth-github' # for github integration
+gem 'mandrill-api', '1.0.52', require: 'mandrill' # for mandrill
+gem 'gibbon' # for mailchimp
+gem 'friendly_id' # for nice links
 
 group :development, :test do
   gem 'byebug'
