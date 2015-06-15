@@ -1,3 +1,48 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p><i class="fa fa-bed"></i></p>
+<!-- Section 1 -->
+<section id="intro" data-speed="6" data-type="background">
+  <div class="container">
+    <h4 class="text-center">Learn by making real projects.</h4>
+    <h1 class="text-center">CODElit is now online!</h1>
+    <h4 class="text-center">(Ruby on Rails, HTML, CSS, JS, Python, C++ and many more.)</h4>
+    <%= link_to "Create an account", new_user_registration_path, class: "text-center btn btn-success btn-lg" %>
+  </div>
+</section>
+<!-- Section 2 -->
+<section id="home" data-speed="4" data-type="background">
+  <div class="container">
+    <h3 class="text-center">Courses with videos and step by step written instructions to become pro.</h3>
+    <p class="text-center"><%= link_to "Our Courses", courses_path, class: "btn btn-lg btn-info" %></p>
+  </div>
+</section>
+<!-- Section 3 -->
+<section id="about" data-speed="2" data-type="background">
+  <div class="container">
+    <h3 class="text-center">Create free account on the website to get updates on new course or new project on the website.</h3>
+    <p class="text-center"><%= link_to "Create an account", new_user_registration_path, class: "btn btn-success btn-lg" %></p>
+  </div>
+</section>
+
+<script>
+    $(document).ready(function(){
+        document.createElement("section");
+        // cache the window object
+        $window = $(window);
+
+        $('section[data-type="background"]').each(function(){
+            // declare the variable to affect the defined data-type
+            var $scroll = $(this);
+
+            $(window).scroll(function() {
+                // HTML5 proves useful for helping with creating JS functions!
+                // also, negative value because we're scrolling upwards
+                var yPos = -($window.scrollTop() / $scroll.data('speed'));
+
+                // background position
+                var coords = '50% '+ yPos + 'px';
+
+                // move the background
+                $scroll.css({ backgroundPosition: coords });
+            }); // end window scroll
+        });  // end section function
+    }); // close out script
+</script>

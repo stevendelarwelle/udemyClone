@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
     friendly_id :name, use: :slugged
 
-  #after_create :subscribe
+  after_create :subscribe
+  after_create :send_welcome
 
   has_many :courses, dependent: :destroy
   has_many :lectures, dependent: :destroy
