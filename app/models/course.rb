@@ -7,6 +7,12 @@ class Course < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true
   validates :user_id, presence: true
+  has_attached_file :image,
+                    :styles => {
+                        :thumb => "480x270#" }
+  validates_attachment_content_type :image,
+                                    content_type:  /^image\/(png|gif|jpeg)/,
+                                    message: "Only images allowed"
   extend FriendlyId
     friendly_id :name, use: :slugged
 

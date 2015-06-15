@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <%= image_tag "rails1.jpg", alt: @course.name, class: "img-responsive" %>
+        <%= image_tag @course.image.url(:original), alt: @course.name, class: "img-responsive" %>
       </div>
       <div class="col-md-6">
         <h2><%= @course.name %></h2>

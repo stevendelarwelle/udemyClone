@@ -22,5 +22,14 @@ module UdemyClone
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.paperclip_defaults = {
+        storage: :fog,
+        fog_credentials: {
+            provider: 'Google',
+            google_storage_access_key_id: ENV['GCS_ACCESS_KEY_ID'],
+            google_storage_secret_access_key: ENV['GCS_SECRET_ACCESS_KEY']
+        },
+        fog_directory: ENV['GCS_BUCKET'],
+    }
   end
 end

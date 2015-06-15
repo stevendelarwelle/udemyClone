@@ -32,6 +32,8 @@ gem 'omniauth-github' # for github integration
 gem 'mandrill-api', '1.0.52', require: 'mandrill' # for mandrill
 gem 'gibbon' # for mailchimp
 gem 'friendly_id' # for nice links
+gem 'paperclip'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
