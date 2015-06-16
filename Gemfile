@@ -33,8 +33,14 @@ gem 'gibbon' # for mailchimp
 gem 'friendly_id' # for nice links
 gem 'paperclip'
 gem 'fog'
+gem 'puma'
 
 group :development, :test do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
   gem 'sqlite3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -44,6 +50,5 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'puma'
 end
 
