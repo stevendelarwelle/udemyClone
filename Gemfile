@@ -34,6 +34,8 @@ gem 'friendly_id' # for nice links
 gem 'paperclip'
 gem 'fog'
 gem 'puma'
+gem 'execjs'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'capistrano',         require: false
