@@ -24,6 +24,6 @@ production:
   adapter: postgresql
   pool: 5
   timeout: 5000
-  database: deploy
+  database: codelit
   encoding: utf8
   min_messages: warning

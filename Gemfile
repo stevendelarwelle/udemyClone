@@ -33,24 +33,17 @@ gem 'gibbon' # for mailchimp
 gem 'friendly_id' # for nice links
 gem 'paperclip'
 gem 'fog'
-gem 'puma'
-gem 'execjs'
-gem 'therubyracer'
-gem 'dotenv-rails' # for env files
 
 group :development, :test do
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
   gem 'sqlite3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-
+  gem 'dotenv-rails' # for env files
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
+  gem 'puma'
 end
 
